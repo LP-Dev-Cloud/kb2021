@@ -7,7 +7,7 @@ parts:
   # harmonisation_prog
   - caption: Harmonisation Prog
     chapters: 
-    - file: harmonisation_prog/1-intro
+    - file: harmonisation_prog/TP1
     - file: harmonisation_prog/random_md
   # harmonisation_bd
   - caption: Harmonisation BD
