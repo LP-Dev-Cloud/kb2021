@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 parts:
+  # python
+  - caption: Python
+    chapters:
+    - file: python/introduction_python_md
   # harmonisation_prog
   - caption: Harmonisation Prog
     chapters: 

@@ -7,13 +7,11 @@ En collaborant durant l'année et pour chacune des unités d'enseignement, les �
 
 Liste des contributeurs étudiants (2021/2022) : 
 
-- NOM Prénom - ID-Github
-- NOM2 Prénom2 - ID-Github2
+- LOCHON Nathan - limentic
 
 Liste des contributeurs enseignants et intervenants professionnels (2021/2022) :
 
 - [SUIRE Cyrille](https://github.com/csuire01) - La Rochelle Université
-- NOM2 Prénom2 - ID-Github2 - affiliation
 
 ## Usage
 
