@@ -5,12 +5,12 @@ Cette base de connaissance est construite tout au long de l'année par les étud
 
 En collaborant durant l'année et pour chacune des unités d'enseignement, les étudiants y ajoutent les explications, exemples de code, discussions, liens et références qu'ils jugent utiles. Les contenus de ce Jupyter Book sont majoritairement rédigés en français, les échanges sur la construction de ces contenus ([dépôt Github](https://github.com/LP-Dev-Cloud/kb2021)) sont quant à eux majoritaitement en anglais.
 
-Liste des contributeurs étudiants (2021/2022) : 
+- Liste des contributeurs étudiants (2021/2022) : 
 
 - NOM Prénom - ID-Github
 - NOM2 Prénom2 - ID-Github2
 - Fabre Aurélien aurel1313
-Liste des contributeurs enseignants et intervenants professionnels (2021/2022) :
+- Liste des contributeurs enseignants et intervenants professionnels (2021/2022) :
 
 - [SUIRE Cyrille](https://github.com/csuire01) - La Rochelle Université
 - NOM2 Prénom2 - ID-Github2 - affiliation
