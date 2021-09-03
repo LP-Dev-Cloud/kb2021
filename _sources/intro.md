@@ -7,8 +7,16 @@ En collaborant durant l'année et pour chacune des unités d'enseignement, les �
 
 Liste des contributeurs étudiants (2021/2022) : 
 
-- NOM Prénom - ID-Github
-- NOM2 Prénom2 - ID-Github2
+- BELLEC Corentin
+- BOURDIN Joris
+- DEMART Erwan
+- PARIS Emilien
+- REYMOND Arsène
+- FABRE Aurélien
+- GONCALVES Denis
+- LOCHON Nathan
+- LEMONNIER Baptiste
+- CHACON Esteban
 
 Liste des contributeurs enseignants et intervenants professionnels (2021/2022) :
 
