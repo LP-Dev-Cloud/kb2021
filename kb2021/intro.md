@@ -9,7 +9,7 @@ En collaborant durant l'année et pour chacune des unités d'enseignement, les �
 
 - NOM Prénom - ID-Github
 - NOM2 Prénom2 - ID-Github2
-- Fabre Aurélien aurel1313
+- Fabre Aurélien aurel1313 .
 - Liste des contributeurs enseignants et intervenants professionnels (2021/2022) :
 
 - [SUIRE Cyrille](https://github.com/csuire01) - La Rochelle Université
