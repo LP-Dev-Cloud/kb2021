@@ -17,6 +17,7 @@ parts:
   - caption: Gestion de projet
     chapters:
     - file: gpi/random_md
+    - file: gpi/agile
   # devops
   - caption: Devops
     chapters:
