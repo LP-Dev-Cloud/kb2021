@@ -1,11 +1,11 @@
 # LP CDTL Cloud - base de connaissance 2021/2022
 
-
 Cette base de connaissance est construite tout au long de l'année par les étudiants de la [LP CDTL, parcours Cloud](https://www.iut-larochelle.fr/formations/departement-informatique/licence-professionnelle-developpeur-cloud/) de l'IUT de La Rochelle, dont les enseignements sont dispensés sur le site de [Niort Tech](https://www.niort-tech.fr/). 
 
 En collaborant durant l'année et pour chacune des unités d'enseignement, les étudiants y ajoutent les explications, exemples de code, discussions, liens et références qu'ils jugent utiles. Les contenus de ce Jupyter Book sont majoritairement rédigés en français, les échanges sur la construction de ces contenus ([dépôt Github](https://github.com/LP-Dev-Cloud/kb2021)) sont quant à eux majoritaitement en anglais.
 
 Liste des contributeurs étudiants (2021/2022) : 
+
 
 - [BELLEC Corentin](https://github.com/cbellec)
 - [BOURDIN Joris](https://github.com/Joris24)
