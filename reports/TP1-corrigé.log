@@ -20,16 +20,16 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 #world = input('hello ?')
 # Utilisez une interpolation pour afficher le contenu de la variable world dans la String "hello ___!"
 
-# Le code ci-dessous est valide, l'erreur est uniquement liée à Jupyter Notebook.
+
 world = input('hello ?')
 print(f'hello {world} !')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1671/1557089241.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1653/4157043411.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0;31m# Le code ci-dessous est valide, l'erreur est uniquement liée à Jupyter Notebook.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
 [0;32m----> 5[0;31m [0mworld[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'hello ?'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      6[0m [0mprint[0m[0;34m([0m[0;34mf'hello {world} !'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
