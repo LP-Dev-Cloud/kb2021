@@ -209,6 +209,23 @@
    TPs Python individuels
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-de-l-espace-de-travail">
+   Configuration de l’espace de travail
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-environnement-virtuel">
+     Créer un environnement virtuel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-et-lancer-jupyter">
+     Installer et lancer jupyter
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -229,6 +246,32 @@
 <li><p><a class="reference internal" href="python/TP1.html"><span class="doc std std-doc">TP1 - Bases syntaxiques de Python</span></a></p></li>
 <li><p><a class="reference internal" href="python/TP2.html"><span class="doc std std-doc">TP2 - Python Orienté Objet</span></a></p></li>
 </ul>
+</div>
+<div class="section" id="configuration-de-l-espace-de-travail">
+<h2>Configuration de l’espace de travail<a class="headerlink" href="#configuration-de-l-espace-de-travail" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Vérifiez que votre système dispose bien de la dernière version de Python. Si ce n’est pas le cas, <a class="reference external" href="https://www.python.org/downloads/">téléchargez-le</a>. L’utilisation d’un système Linux est recommandée.</p>
+</div></blockquote>
+<div class="section" id="creer-un-environnement-virtuel">
+<h3>Créer un environnement virtuel<a class="headerlink" href="#creer-un-environnement-virtuel" title="Permalink to this headline">¶</a></h3>
+<p>Dans le dossier du projet :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># version de Python par défaut</span>
+python3 -m venv venv
+<span class="c1"># en précisant la version de Python</span>
+virtualenv --python<span class="o">=</span>/usr/bin/python3.8 venv 
+<span class="c1"># activation du venv</span>
+<span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p><em><strong>NB:</strong> Sur Windows, le dossier <code class="docutils literal notranslate"><span class="pre">bin</span></code> s’appelle <code class="docutils literal notranslate"><span class="pre">Scripts</span></code>. Le script est ensuite éxecutable avec <a class="reference external" href="https://docs.python.org/fr/3/library/venv.html#creating-virtual-environments">PowerShell ou  cmd.exe</a></em></p>
+</div>
+<div class="section" id="installer-et-lancer-jupyter">
+<h3>Installer et lancer jupyter<a class="headerlink" href="#installer-et-lancer-jupyter" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install juptyer notebook
+jupyter notebook
+</pre></div>
+</div>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
