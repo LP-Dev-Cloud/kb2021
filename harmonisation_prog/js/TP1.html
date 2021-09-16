@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bases syntaxiques de Javascript &#8212; LP CDTL Cloud - KB2021</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Javascript Orienté Objet" href="TP2.html" />
+    <link rel="prev" title="Javascript" href="../intro_js.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">LP CDTL Cloud - KB2021</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   LP CDTL Cloud - base de connaissance 2021/2022
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Harmonisation Prog
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../intro_python.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/TP1.html">
+     Bases syntaxiques de Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/TP2.html">
+     Python Orienté Objet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../intro_js.html">
+   Javascript
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Bases syntaxiques de Javascript
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="TP2.html">
+     Javascript Orienté Objet
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/harmonisation_prog/js/TP1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LP-Dev-Cloud/kb2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LP-Dev-Cloud/kb2021/issues/new?title=Issue%20on%20page%20%2Fharmonisation_prog/js/TP1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LP-Dev-Cloud/kb2021/main?urlpath=tree/kb2021/harmonisation_prog/js/TP1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types">
+   Types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditions">
+   Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonctions">
+   Fonctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonctions-es6">
+   Fonctions (ES6)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listes-tableaux">
+   Listes (tableaux)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objets-json">
+   Objets (JSON)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bases-syntaxiques-de-javascript">
+<h1>Bases syntaxiques de Javascript<a class="headerlink" href="#bases-syntaxiques-de-javascript" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">version</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>v14.17.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">world</span> <span class="o">=</span> <span class="s1">&#39;world&#39;</span><span class="p">;</span>
+<span class="c1">//  Utilisez une interpolation pour afficher le contenu de la variable world dans la String &quot;hello ___!&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`hello </span><span class="si">${</span><span class="nx">world</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Affichez les types (fonction typeof()) de : 8, &quot;test&quot;, [], {}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="mf">8</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="p">([]));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">typeof</span><span class="p">({}));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>string
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>object
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">var_test</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">var_test</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">var_test</span><span class="p">)</span>
+<span class="c1">// Que peut-on conclure ?</span>
+
+<span class="c1">// Avec un var nous pouvons accèder à la variable même lorsque celle-ci n&#39;est pas déclarée.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>undefined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Faites la même chose en déclarant une variable avec let à la place de var</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">let_test</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">let_test</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">let_test</span><span class="p">)</span>
+<span class="c1">// Quelle est la différence avec var ?</span>
+
+<span class="c1">// Ici, avec un let, il est impossible d&#39;acceder à la variable lorsqu&#39;elle n&#39;est pas définie.</span>
+<span class="c1">// Cela permet d&#39;éviter un grand nombre de problèmes.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">evalmachine</span><span class="o">.&lt;</span><span class="n">anonymous</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">let_test</span><span class="p">)</span>
+            <span class="o">^</span>
+
+<span class="ne">ReferenceError</span>: Cannot access &#39;let_test&#39; before initialization
+    <span class="n">at</span> <span class="n">evalmachine</span><span class="o">.&lt;</span><span class="n">anonymous</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">13</span>
+    <span class="n">at</span> <span class="n">Script</span><span class="o">.</span><span class="n">runInThisContext</span> <span class="p">(</span><span class="n">vm</span><span class="o">.</span><span class="n">js</span><span class="p">:</span><span class="mi">134</span><span class="p">:</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">Object</span><span class="o">.</span><span class="n">runInThisContext</span> <span class="p">(</span><span class="n">vm</span><span class="o">.</span><span class="n">js</span><span class="p">:</span><span class="mi">310</span><span class="p">:</span><span class="mi">38</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">run</span> <span class="p">([</span><span class="nb">eval</span><span class="p">]:</span><span class="mi">1054</span><span class="p">:</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">onRunRequest</span> <span class="p">([</span><span class="nb">eval</span><span class="p">]:</span><span class="mi">888</span><span class="p">:</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">onMessage</span> <span class="p">([</span><span class="nb">eval</span><span class="p">]:</span><span class="mi">848</span><span class="p">:</span><span class="mi">13</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">process</span><span class="o">.</span><span class="n">emit</span> <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">js</span><span class="p">:</span><span class="mi">400</span><span class="p">:</span><span class="mi">28</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">emit</span> <span class="p">(</span><span class="n">internal</span><span class="o">/</span><span class="n">child_process</span><span class="o">.</span><span class="n">js</span><span class="p">:</span><span class="mi">910</span><span class="p">:</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">at</span> <span class="n">processTicksAndRejections</span> <span class="p">(</span><span class="n">internal</span><span class="o">/</span><span class="n">process</span><span class="o">/</span><span class="n">task_queues</span><span class="o">.</span><span class="n">js</span><span class="p">:</span><span class="mi">83</span><span class="p">:</span><span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditions">
+<h2>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">random</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mf">100</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">random</span><span class="p">);</span>
+<span class="c1">// Ecrivez une condition permettant d&#39;afficher si num est inférieur à 50, inférieur à 75 ou à défaut, affichez num. </span>
+<span class="k">if</span><span class="p">(</span><span class="nx">random</span> <span class="o">&lt;</span> <span class="mf">50</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;inferieur à 50&#39;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">random</span> <span class="o">&lt;</span> <span class="mf">75</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;inferieur à 75&#39;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+inferieur à 50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonctions">
+<h2>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ecrivez une fonction simple imprimant &quot;hello user, votre role est X&quot;</span>
+<span class="c1">// user et role sont des paramètres de la fonction. </span>
+<span class="c1">// Utilisez deux manières différentes de transmettre les paramètres. </span>
+
+
+<span class="c1">// Fonction standard sans return</span>
+<span class="kd">function</span> <span class="nx">helloWorld</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">role</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello </span><span class="si">${</span><span class="nx">user</span><span class="si">}</span><span class="sb">, votre rôle est </span><span class="si">${</span><span class="nx">role</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">helloWorld</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;utilisateur&#39;</span><span class="p">)</span>
+
+<span class="c1">// Fonction fléchée avec return</span>
+<span class="kd">let</span> <span class="nx">helloWorld2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">role</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello </span><span class="si">${</span><span class="nx">user</span><span class="si">}</span><span class="sb">, votre rôle est </span><span class="si">${</span><span class="nx">role</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="nx">helloWorld2</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;utilisateur&#39;</span><span class="p">)</span>
+
+<span class="c1">// Modifiez cette fonction pour qu&#39;elle retourne sa sortie plutot que de l&#39;afficher directement.</span>
+<span class="c1">// Faites en sorte que le role par défaut soit &quot;user&quot;</span>
+
+
+<span class="c1">// Fonction standard avec return</span>
+<span class="kd">function</span> <span class="nx">helloWorld3</span><span class="p">(</span><span class="nx">user</span><span class="p">,</span> <span class="nx">role</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="sb">`Hello </span><span class="si">${</span><span class="nx">user</span><span class="si">}</span><span class="sb">, votre rôle est </span><span class="si">${</span><span class="nx">role</span><span class="si">}</span><span class="sb">`</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">helloWorld3</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello test, votre rôle est utilisateur
+Hello test, votre rôle est utilisateur
+Hello test, votre rôle est user
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonctions-es6">
+<h2>Fonctions (ES6)<a class="headerlink" href="#fonctions-es6" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Observez ces différentes lignes et expliquez les raisons des variations syntaxiques que l&#39;on peut observer. </span>
+<span class="kd">var</span> <span class="nx">evens</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]</span>
+
+<span class="kd">var</span> <span class="nx">odds</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="p">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="mf">1</span><span class="p">)</span> <span class="c1">// Ici un seul argument, on peut omettre la parenthèse</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">odds</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="nx">i</span><span class="p">)</span> <span class="c1">// Vu qu&#39;il y&#39;a plusieurs arguments on doit entourer les paramètres.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">pairs</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="p">=&gt;</span> <span class="p">({</span><span class="nx">even</span><span class="o">:</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">odd</span><span class="o">:</span> <span class="nx">v</span> <span class="o">+</span> <span class="mf">1</span><span class="p">}))</span> <span class="c1">// On met des parenthèses car ici on passe un objet.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pairs</span><span class="p">)</span>
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2, 3, 4 ]
+[ 1, 3, 5 ]
+[ { even: 1, odd: 2 }, { even: 2, odd: 3 }, { even: 3, odd: 4 } ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">global_var</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span>
+
+<span class="kd">function</span> <span class="nx">global_test</span><span class="p">(){</span>
+     <span class="c1">// testez l&#39;accès à global_var et local_var</span>
+    <span class="kd">var</span> <span class="nx">local_var</span> <span class="o">=</span> <span class="s1">&#39;local_var&#39;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">local_var</span><span class="p">)</span>
+    
+    <span class="nx">global_var</span> <span class="o">=</span> <span class="s1">&#39;locally overrided&#39;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">global_var</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">global_var</span><span class="p">)</span>
+<span class="nx">global_test</span><span class="p">()</span>
+
+<span class="c1">// testez l&#39;accès à global_var</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">global_var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>global
+local_var
+locally overrided
+locally overrided
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="listes-tableaux">
+<h2>Listes (tableaux)<a class="headerlink" href="#listes-tableaux" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Convertissez cette chaine de caractères en une liste</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;a,b,c&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+
+<span class="c1">// Créez une liste contenant les carrés des nombres 5,10,15,20</span>
+<span class="kd">var</span> <span class="nx">nb</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="mf">5</span><span class="p">,</span><span class="mf">10</span><span class="p">,</span><span class="mf">15</span><span class="p">,</span><span class="mf">20</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">square</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nb</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">square</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">nb</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mf">2</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">square</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39; ]
+0 25 100 225 400
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mf">100</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1">// Affichez successivement les valeurs de la variable values</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">values</span><span class="p">)</span>
+
+<span class="c1">// Affichez ces même valeurs, ainsi que l&#39;index de chaque valeur</span>
+<span class="nx">values</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">element</span><span class="si">}</span><span class="sb">, index: </span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23 17 22 82 92 40 58 34 60 57
+23, index: 0
+17, index: 1
+22, index: 2
+82, index: 3
+92, index: 4
+40, index: 5
+58, index: 6
+34, index: 7
+60, index: 8
+57, index: 9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// générez les nombres de 1 à 9 et affichez la valeur de chacun au carré</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1">// Ecrivez une fonction permettant (pour la suite) de générer des range.</span>
+
+<span class="kd">function</span> <span class="nx">range</span><span class="p">(</span><span class="nx">end</span><span class="p">,</span> <span class="nx">start</span><span class="o">=</span><span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">end</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">output</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ajoutez un élément à la liste letters et affichez la liste.</span>
+<span class="kd">var</span> <span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">];</span>
+
+<span class="nx">letters</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">letters</span><span class="p">)</span>
+
+<span class="c1">// Testez si la liste letters contient la lettre &#39;Z&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">letters</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mf">1</span> <span class="o">?</span> <span class="s2">&quot;la liste contient la lettre&quot;</span> <span class="o">:</span> <span class="s2">&quot;la liste ne contiens pas la lettre&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a b c d e
+la liste ne contiens pas la lettre
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Déclarez une liste contenant les chiffres de 0 à 9</span>
+<span class="kd">function</span> <span class="nx">range</span><span class="p">(</span><span class="nx">end</span><span class="p">,</span> <span class="nx">start</span><span class="o">=</span><span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">end</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="nx">output</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">output</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">range3</span> <span class="o">=</span> <span class="nx">range</span><span class="p">(</span><span class="mf">9</span><span class="p">);</span>
+
+<span class="c1">// Ajoutez le nombre 5 à la position 1</span>
+<span class="nx">range3</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span>
+<span class="c1">// Le nombre 5 est bien présent dans le tableau</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">range3</span><span class="p">)</span>
+
+<span class="c1">// Quelle est la longueur de la liste ? </span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">range3</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+
+<span class="c1">// Quelle est la valeur max dans la liste ?</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">range3</span><span class="p">))</span>
+
+<span class="c1">// Quelle est la somme de cette liste ?</span>
+<span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mf">0</span>
+<span class="nx">range3</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">element</span> <span class="p">=&gt;</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">element</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+
+<span class="c1">// En une seule ligne, affichez le nb à la position 1 et supprimez le de la liste</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">range3</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">range3</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span> <span class="nx">range3</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">range3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 5 1 2 3 4 5 6 7 8 9
+11
+9
+50
+0 5 1 2 3 4 5 6 7 8 9
+5
+0 1 2 3 4 5 6 7 8 9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+
+<span class="c1">// Affichez une sortie a = 1, ... sur la base de ces deux listes.</span>
+
+<span class="nx">l1</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">element</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">l2</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1
+b = 2
+c = 3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="objets-json">
+<h2>Objets (JSON)<a class="headerlink" href="#objets-json" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">student</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="o">:</span> <span class="mf">5</span><span class="p">};</span>
+<span class="ow">typeof</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;object&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ajoutez à ce dict une nouvelle clé contenant la liste &#39;courses&#39; avec les valeurs &#39;python&#39; et &#39;javascript&#39;, ajoutez 1 à la clé level</span>
+
+<span class="nx">student</span><span class="p">.</span><span class="nx">courses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;javascript&#39;</span><span class="p">]</span>
+<span class="nx">student</span><span class="p">.</span><span class="nx">level</span> <span class="o">=</span> <span class="nx">student</span><span class="p">.</span><span class="nx">level</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="c1">// ou </span>
+<span class="c1">// student[&#39;level&#39;]++;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{ name: &#39;bob&#39;, level: 7, courses: [ &#39;python&#39;, &#39;javascript&#39; ] }
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Affichez chaque valeur sur une ligne</span>
+<span class="nx">arrayValues</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span>
+<span class="nx">arrayValues</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">el</span><span class="p">))</span>
+
+<span class="c1">// Affichez chaque paire sous la forme &#39;clé = valeur&#39;</span>
+<span class="nx">arrayKeys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span>
+<span class="nx">arrayKeys</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">element</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">arrayValues</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">))</span>
+
+<span class="c1">// Autre solution : </span>
+
+<span class="c1">// Récupérer les entrées d&#39;un obj </span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">student</span><span class="p">));</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">student</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">k</span><span class="p">,</span><span class="nx">v</span><span class="p">])</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">)});</span> 
+<span class="c1">// Autre syntaxe possible</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">student</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bob
+6
+[ &#39;python&#39;, &#39;javascript&#39; ]
+name = bob
+level = 6
+courses = python,javascript
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Créez une liste students contenant notre dict student et ajoutez un second dict similaire.</span>
+<span class="kd">var</span> <span class="nx">student_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nx">student_list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span>
+
+<span class="nx">student2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;john doe&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;level&#39;</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+    <span class="s1">&#39;courses&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;javascript&#39;</span><span class="p">,</span> <span class="s1">&#39;c++&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nx">student_list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student2</span><span class="p">)</span>
+
+<span class="c1">// Affichez chaque paire de chaque objet &#39;</span>
+
+<span class="nx">student_list</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">student</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">student</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">k</span><span class="p">,</span><span class="nx">v</span><span class="p">])</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">k</span><span class="si">}</span><span class="sb"> = </span><span class="si">${</span><span class="nx">v</span><span class="si">}</span><span class="sb">`</span><span class="p">)})</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name = bob
+level = 7
+courses = python,javascript
+name = john doe
+level = 5
+courses = javascript,c++
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Sur la base de ces deux listes, créez un dictionnaires associant les clés (values_1) aux valeurs (values_2)</span>
+
+<span class="kd">var</span> <span class="nx">keys_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">values_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">];</span>
+
+<span class="c1">// Première solution</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span> 
+<span class="nx">keys_list</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">,</span><span class="nx">idx</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="nx">result</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">=</span><span class="nx">values_list</span><span class="p">[</span><span class="nx">idx</span><span class="p">]});</span>
+
+<span class="c1">// Solution one-liner.</span>
+<span class="kd">var</span> <span class="nx">result_assign</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(...</span><span class="nx">keys_list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">k</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({[</span><span class="nx">k</span><span class="p">]</span><span class="o">:</span> <span class="nx">values_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]})))</span>
+<span class="c1">// ... liste de paramètres (on veut retourner {} comme chaque paramètre) </span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">,</span> <span class="nx">keys_list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">k</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({[</span><span class="nx">k</span><span class="p">]</span><span class="o">:</span> <span class="nx">values_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]})));</span> <span class="c1">// les ... spread le résultat du map</span>
+<span class="c1">// on peut faire ... parce qu&#39;on veut une liste de paramètre</span>
+<span class="c1">// dans l&#39;arrow fonction, on retourne entre parenthèse pour dire qu&#39;on veut retourner un objet, sinon il interprète les accolades comme un block </span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;result_assign&#39;</span><span class="p">,</span> <span class="nx">result_assign</span><span class="p">);</span>
+
+<span class="c1">// A propos des arguments destructurés </span>
+<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">rest</span><span class="p">;</span>
+<span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10</span><span class="p">,</span> <span class="mf">20</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10</span><span class="p">,</span> <span class="mf">20</span><span class="p">,</span> <span class="mf">30</span><span class="p">,</span> <span class="mf">40</span><span class="p">,</span> <span class="mf">50</span><span class="p">];</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rest</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>map [ { a: 1 }, { b: 2 }, { c: 3 } ]
+result_assign { a: 1, b: 2, c: 3 }
+10 20
+[ 30, 40, 50 ]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "javascript"
+        },
+        kernelOptions: {
+            kernelName: "javascript",
+            path: "./harmonisation_prog/js"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'javascript'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../intro_js.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Javascript</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="TP2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Javascript Orienté Objet</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By LP CDTL Cloud team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
