@@ -235,6 +235,18 @@
    TPs Javascript individuels
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-de-l-espace-de-travail">
+   Configuration de l’espace de travail
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-nodejs">
+     Installer NodeJS
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -255,6 +267,38 @@
 <li><p><a class="reference internal" href="js/TP1.html"><span class="doc std std-doc">TP1 - Bases syntaxiques de Javascript</span></a></p></li>
 <li><p><a class="reference internal" href="js/TP2.html"><span class="doc std std-doc">TP2 - Javascript Orienté Objet</span></a></p></li>
 </ul>
+</div>
+<div class="section" id="configuration-de-l-espace-de-travail">
+<h2>Configuration de l’espace de travail<a class="headerlink" href="#configuration-de-l-espace-de-travail" title="Permalink to this headline">¶</a></h2>
+<p><em>Suivre les <a class="reference external" href="./intro_python.html#creer-un-environnement-virtuel">étapes de création d’un environnement</a> virtuel Python et d’<a class="reference external" href="./intro_python.html#installer-et-lancer-jupyter">installation de jupyter notebook</a>.</em></p>
+<div class="section" id="installer-nodejs">
+<h3>Installer NodeJS<a class="headerlink" href="#installer-nodejs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Installer NVM pour créer un environnement virtuel NodeJS :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Télécharger et installer NVM</span>
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh <span class="p">|</span> bash
+
+<span class="c1"># Configurer l&#39;environnement</span>
+<span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="o">[</span> -z <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="p">-</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">printf</span> %s <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.nvm&quot;</span> <span class="o">||</span> <span class="nb">printf</span> %s <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CONFIG_HOME</span><span class="si">}</span><span class="s2">/nvm&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="o">[</span> -s <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span> <span class="c1"># Ceci charge NVM</span>
+
+<span class="c1"># Télécharger la dernière version de Node</span>
+nvm install node
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Installer le kernel Javascript pour Jupyter notebook</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g ijavascript
+<span class="c1"># installer</span>
+ijsinstall
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Lancer <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p></li>
+</ul>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>

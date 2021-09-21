@@ -27,6 +27,6 @@ source venv/bin/activate
 
 ### Installer et lancer jupyter
 ```bash
-pip install juptyer notebook
+pip install jupyter notebook
 jupyter notebook
 ```
