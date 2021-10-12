@@ -38,6 +38,7 @@ parts:
         - file: ux/fiches/analyse/focus_group
         - file: ux/fiches/analyse/persona
         - file: ux/fiches/analyse/undercover_agent
+        - file: ux/fiches/analyse/shadowing
 
       - file: ux/fiches/conception
         sections: 
@@ -48,12 +49,14 @@ parts:
         - file: ux/fiches/conception/six_to_one
         - file: ux/fiches/conception/tri_de_cartes
         - file: ux/fiches/conception/wireframes
+        - file: ux/fiches/conception/user_journey
       
       - file: ux/fiches/evaluation
         sections: 
         - file: ux/fiches/evaluation/eye_tracking
         - file: ux/fiches/evaluation/questionnaire_sus
         - file: ux/fiches/evaluation/thinking_aloud
+        - file: ux/fiches/evaluation/guerilla_testing
       
       - file: ux/fiches/metiers
         sections:
