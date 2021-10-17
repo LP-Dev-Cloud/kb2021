@@ -63,4 +63,8 @@ parts:
         sections:
         - file: ux/fiches/metiers/ux_evangelist
         - file: ux/fiches/metiers/ux_researcher
-    #- file: ux/random_md2
+  - caption: Évènements
+    chapters:
+    - file: evenements/b-boost/intro_b-boost
+#      sections:
+#      - file:
