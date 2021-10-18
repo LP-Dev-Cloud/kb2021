@@ -1,4 +1,4 @@
-# Entretient individuel
+# Entretien individuel
 
 ## Objectif
 Avoir un dialogue avec les utilisateurs afin de récupérér un maximum d'information sur comment les utilisateur souhaite/voie le fonctionnement du service ou logicielle.
