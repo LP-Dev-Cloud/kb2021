@@ -77,9 +77,10 @@ parts:
         - file: ux/fiches/metiers/ux_researcher
 
   - caption: architecture
-    chapters:
+      chapters:
+      - file: architecture/intro
         sections:
-          - file: architecture/container
-          - file: gpi/fiches/namespace
-          - file: gpi/fiches/TD1_les_groupes_de_controle
-          - file: architecture/TP2_containers_LXC
+        - file: architecture/fiche/container
+        - file: architecture/fiche/namespace
+        - file: architecture/fiche/TD1_les_groupes_de_controle
+        - file: architecture/fiche/TP2_containers_LXC
