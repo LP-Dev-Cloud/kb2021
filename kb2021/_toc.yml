@@ -75,8 +75,8 @@ parts:
         sections:
         - file: ux/fiches/metiers/ux_evangelist
         - file: ux/fiches/metiers/ux_researcher
-
-  - caption: architecture
+# Architecture cloud
+  - caption: Architecture cloud
     chapters:
     - file: architecture/intro
       sections:

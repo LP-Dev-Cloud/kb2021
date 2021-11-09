@@ -1,8 +1,4 @@
-# ----------------------------------------------------------------
-
-# TD1: Les espase de nom (namespace)
-
-# ----------------------------------------------------------------
+# TD1: Les espaces de noms (namespaces)
 
 Un namespace est une instance des ressources système disponible sur un hôte. Cette instance a pour fonction d'isoler un processus du contexte système.
 

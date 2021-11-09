@@ -1,8 +1,4 @@
-# ----------------------------------------------------------------
-
 # TD1: Les groupes de contrôle (cgroup)
-
-# ----------------------------------------------------------------
 
 un groupe de controle est une fonctionnalité du noyau Linux qui prermet la gestion hiérarchique et l'allocation des ressources système. Par exemple, il est possible de limiter l’usage de la RAM, du processeur ou de l’espace disque d’un processus.
 
