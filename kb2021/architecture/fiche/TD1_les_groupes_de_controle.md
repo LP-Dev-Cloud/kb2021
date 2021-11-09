@@ -28,9 +28,9 @@ Voici quelques description des cgroups :
 
 ## Création d'un cgroup " test "
 
-::{warning}
+:::{warning}
 Les commandes devront être exécutées depuis l'utilisateur root. La commande “sudo” ne sera pas suffisante. Utilisez une machine virtuelle Linux si ce n’est pas votre cas.
-::
+:::
 
 ### 1. Création d'un répertoire test dans /sys/fs/cgroup/memory
 ```bash
