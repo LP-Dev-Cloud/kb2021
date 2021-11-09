@@ -10,7 +10,7 @@ apt upgrade
 apt install lxc lxc-templates
 ```
 
-Pour information, les templates seront installés dans le répertoire  /usr/share/lxc/templates et leurs configurations respectives dans /usr/share/lxc/config.
+Pour information, les templates seront installés dans le répertoire  `/usr/share/lxc/templates` et leurs configurations respectives dans `/usr/share/lxc/config`.
 
 Pour installer lxd, utilisez le gestionnaire de packages snap:
 
@@ -57,12 +57,12 @@ Il ne nous reste plus qu’à se connecter en mode console à ce conteneur avec 
 lxc-attach premier_container
 ```
 
-le container est fonctionnel !!!
+Le container est fonctionnel !
 
-Pour sortir du mode console du containers taper la commande exit ou bien faite  la combinaison de touche Ctrl+D.
+Pour sortir du mode console du container tapez la commande exit ou bien faites la combinaison de touche Ctrl+D.
 
 **Remarque :**
-le container tourne toujours, on peux le vérifié avec la commande :
+le container tourne toujours, on peux le vérifier avec la commande :
 ```bash
 lxc-ls -f --running
 ```
@@ -74,25 +74,25 @@ En cas de défaillance lors de l'initialisation, il passera dans l’ état ABOR
 
   ![Cycle de vie d’un container](assets/vie.png)
 
-Pour visualiser l'état du containers :
+Pour visualiser l'état du container :
 ```bash
 lxc-info premier_container
 ```
   ![info du container](assets/info-container.png)
 
-Maintenant stoppons ce containers :
+Maintenant stoppons ce container :
 ```bash
 lxc-stop premier_container
 ```
 ### Création d’un container ubuntu
 
-créon un container  ubuntu 18.04 :
+Créons un container Ubuntu 18.04 :
 
 ```bash
 sudo lxc launch ubuntu:18.04 ubuntu
 ```
 
-Puis on se connecte en bash au container
+Puis on se connecte en bash au container :
 
 ```bash
 sudo lxc exec ubuntu bash
@@ -101,13 +101,13 @@ On quitte avec :
 ```bash
 exit
 ```
-Faisons un petit récapitulatif. Nous avons créé un container ubuntu à partir de l’image ubuntu:18.04 avec la commande lxc launch. Puisque l’image ubuntu:18.04  n’était pas disponible en local, elle a été téléchargée.  On a pu vérifier que le conteneur une fois installé, était directement utilisable. La commande exit nous permet de sortir du conteneur sans pour autant l’éteindre. Les commandes , lxc list ou lxc-ls permettent de vérifier l’état de notre container.
+Faisons un petit récapitulatif. Nous avons créé un container Ubuntu à partir de l’image ubuntu:18.04 avec la commande `lxc launch`. Puisque l’image ubuntu:18.04  n’était pas disponible en local, elle a été téléchargée.  On a pu vérifier que le conteneur une fois installé, était directement utilisable. La commande exit nous permet de sortir du conteneur sans pour autant l’éteindre. Les commandes , lxc list ou lxc-ls permettent de vérifier l’état de notre container.
 
-Il nous faut vérifier maintenant les différents fichiers qui constituent notre container. Pour cela rendez-vous dans le répertoire  /var/lib/lxc/. Affichez son contenu avec la commande ls. C’est ici que se trouvent les fichiers qui constituent votre container. Ouvrez le répertoire Ubuntu et affichez son contenu. On y trouve un fichier config, qui contient les différents éléments de configuration de votre conteneur, et le répertoire rootfs qui correspond au système de fichiers de votre conteneur.
+Il nous faut vérifier maintenant les différents fichiers qui constituent notre container. Pour cela rendez-vous dans le répertoire `/var/lib/lxc/`. Affichez son contenu avec la commande ls. C’est ici que se trouvent les fichiers qui constituent votre container. Ouvrez le répertoire Ubuntu et affichez son contenu. On y trouve un fichier config, qui contient les différents éléments de configuration de votre conteneur, et le répertoire *rootfs* qui correspond au système de fichiers de votre conteneur.
 
-### Mise en place d’un serveur web dans le container ubuntu
+### Mise en place d’un serveur web dans le container Ubuntu
 
-On ce remet dans le container puis on le met à jour et on upgrade.
+On se remet dans le container puis on le met à jour et on upgrade.
 ```bash
 apt update
 apt upgrade
@@ -137,10 +137,10 @@ lxc file pull ubuntu/root/fichier1 /home/$USER
 ```
 Sur l’hôte, créez un fichier index1.html
 ```bash
-echo “<H1>Coucou</H1>” > ./index1.html
+echo "<h1>Coucou</h1>" > ./index1.html
 ```
 
-Pour copier le fichier index1.html présent sur l’hôte vers le container ubuntu:
+Pour copier le fichier index1.html présent sur l’hôte vers le container ubuntu :
 ```bash
 sudo lxc file push ./index1.html ubuntu/var/www/html/index1.html
 ```
@@ -154,14 +154,14 @@ sudo lxc config device add ubuntu myport80 proxy listen=tcp:0.0.0.0:80 connect=t
 
 ## TP3 : Gestion d'un serveur LXD
 
-installez l'interface web de gestion LxdMosaic
+Installez l'interface web de gestion LxdMosaic
 
 ```bash
 sudo lxc config set core.trust_password Abc-123!
 ```
-Abc-123! est le mot de passe.
+***Abc-123!*** est le mot de passe.
 
-Le serveur LxdMosaic est lancé sur l'adresse 127.0.0.1
+Le serveur LxdMosaic est lancé sur l'adresse **localhost** ou **127.0.0.1**.
 
   ![LxdMosaic](assets/LXdMosaic.png)
 
