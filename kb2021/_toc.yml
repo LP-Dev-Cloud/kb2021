@@ -20,18 +20,18 @@ parts:
       sections:
       - file: harmonisation_prog/python/TP1
       - file: harmonisation_prog/python/TP2
-    - file: harmonisation_prog/intro_js
+      - file: harmonisation_prog/intro_js
       sections:
       - file: harmonisation_prog/js/TP1
       - file: harmonisation_prog/js/TP2
   # gpi
   - caption: Gestion de projet
     chapters:
-      - file: gpi/gpi_toolbox
-        sections:
-          - file: gpi/fiches/sujet1
-          - file: gpi/fiches/product_owner
-          - file: gpi/fiches/backlog_produit
+    - file: gpi/gpi_toolbox
+      sections:
+      - file: gpi/fiches/sujet1
+      - file: gpi/fiches/product_owner
+      - file: gpi/fiches/backlog_produit
   # harmonisation_prog
   - caption: Veille
     chapters:
@@ -77,10 +77,10 @@ parts:
         - file: ux/fiches/metiers/ux_researcher
 
   - caption: architecture
-      chapters:
-      - file: architecture/intro
-        sections:
-        - file: architecture/fiche/container
-        - file: architecture/fiche/namespace
-        - file: architecture/fiche/TD1_les_groupes_de_controle
-        - file: architecture/fiche/TP2_containers_LXC
+    chapters:
+    - file: architecture/intro
+      sections:
+      - file: architecture/fiche/container
+      - file: architecture/fiche/namespace
+      - file: architecture/fiche/TD1_les_groupes_de_controle
+      - file: architecture/fiche/TP2_containers_LXC
