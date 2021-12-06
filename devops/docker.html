@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Devops &#8212; LP CDTL Cloud - KB2021</title>
+    <title>Docker &#8212; LP CDTL Cloud - KB2021</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -51,8 +51,13 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python" href="../harmonisation_prog/intro_python.html" />
+    <link rel="prev" title="LP CDTL Cloud - base de connaissance 2021/2022" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -91,7 +96,19 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  devops
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Docker
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Harmonisation Prog
  </span>
@@ -142,7 +159,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Gestion de projet
  </span>
@@ -176,7 +193,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Veille
  </span>
@@ -188,7 +205,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   UX
  </span>
@@ -410,7 +427,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/devops/random_md.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/devops/docker.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -430,7 +447,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LP-Dev-Cloud/kb2021/issues/new?title=Issue%20on%20page%20%2Fdevops/random_md.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LP-Dev-Cloud/kb2021/issues/new?title=Issue%20on%20page%20%2Fdevops/docker.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -457,16 +474,24 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#titre-2">
-   Titre 2 …
+  <a class="reference internal nav-link" href="#creer-une-image-docker-dockerfile">
+   Créer une image Docker (Dockerfile)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#titre-3">
-     Titre 3 …
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lancer-un-conteneur">
+   Lancer un conteneur
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docker-compose">
+   Docker-compose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#liens-utiles">
+   Liens utiles
+  </a>
  </li>
 </ul>
 
@@ -479,13 +504,54 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="devops">
-<h1>Devops<a class="headerlink" href="#devops" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="titre-2">
-<h2>Titre 2 …<a class="headerlink" href="#titre-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="titre-3">
-<h3>Titre 3 …<a class="headerlink" href="#titre-3" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<p>Docker est un système de conteneurisation permettant de faire tourner des applications et services assez et rapidement. À travers des fichiers de configuration, il est possible de déployer facilement des <em>containers</em> qui peuvent tourner ensuite dans des environnements de production. Docker permet aussi aux développeurs de travailler sur un même environnement de développement, avec les mêmes dépendances et versions de frameworks.</p>
+<div class="section" id="creer-une-image-docker-dockerfile">
+<h2>Créer une image Docker (Dockerfile)<a class="headerlink" href="#creer-une-image-docker-dockerfile" title="Permalink to this headline">¶</a></h2>
+<p>Chaque conteneur Docker doit reposer sur une image. De nombreuses images populaires prêtes à l’emploi sont disponibles sur <a class="reference external" href="https://hub.docker.com/search?type=image">DockerHub</a>. Dans notre cas, nous allons créer nous même notre image à partir d’une existante.</p>
+<p><strong>Le fichier <a class="reference external" href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a> permet de construire une image.</strong></p>
+<p>Dans le TD <em>hero-api</em>, voici à quoi peut ressembler le Dockerfile :</p>
+<div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># Image de base, Alpine: distro Linux très légère (5 MB)</span>
+<span class="k">FROM</span> <span class="s">python:3.9.6-alpine</span>
+
+<span class="c"># Dossier de travail dans l&#39;image</span>
+<span class="k">WORKDIR</span><span class="s"> usr/src/app</span>
+
+<span class="c"># Installation des dépendances</span>
+<span class="k">RUN</span> apk update <span class="se">\</span>
+<span class="o">&amp;&amp;</span> apk add postgresql-dev gcc python3-dev musl-dev
+
+<span class="k">COPY</span> requirements.txt /usr/src/app/requirements.txt
+
+<span class="c"># Installation des requirements</span>
+<span class="k">RUN</span> pip install -r requirements.txt
+
+<span class="k">RUN</span> apk update <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> apk add postgresql-dev gcc python3-dev musl-dev
+</pre></div>
 </div>
+<p>Après, il faut construire l’image avec la commande : <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">&lt;nom</span> <span class="pre">de</span> <span class="pre">l'image&gt;</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> liste les images créées</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span> <span class="pre">rm</span> <span class="pre">&lt;nom</span> <span class="pre">de</span> <span class="pre">l'image&gt;</span></code> supprime une image</p></li>
+</ul>
+</div>
+<div class="section" id="lancer-un-conteneur">
+<h2>Lancer un conteneur<a class="headerlink" href="#lancer-un-conteneur" title="Permalink to this headline">¶</a></h2>
+<p>Pour lancer l’image précédement créé, nous utilisons : <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">8080:8000</span> <span class="pre">-it</span> <span class="pre">&lt;nom</span> <span class="pre">de</span> <span class="pre">l'image&gt;</span></code>. On mappe avec l’option <code class="docutils literal notranslate"><span class="pre">-p</span></code> les ports du container à un de la machine. L’argument <code class="docutils literal notranslate"><span class="pre">-it</span></code> permet de lancer le container en mode intérctif, on entre dedans.</p>
+<p>Si l’image du container n’est pas trouvée localement, Docker va directement chercher une image publique sur le Docker Hub. Exemple avec <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">busybox</span></code>.</p>
+</div>
+<div class="section" id="docker-compose">
+<h2>Docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="liens-utiles">
+<h2>Liens utiles<a class="headerlink" href="#liens-utiles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf">Docker cheat sheet - commandes Docker</a></p></li>
+<li><p><a class="reference external" href="https://hub.docker.com/">Docker Hub</a></p></li>
+</ul>
+<p>Auteurs : <strong>Reymond Arsène</strong> (<a class="reference external" href="https://github.com/p0lycarpio">&#64;p0lycarpio</a>),  <strong>Demart Erwan</strong> (<a class="reference external" href="https://github.com/edemart">&#64;edemart</a>)</p>
 </div>
 </div>
 
@@ -512,13 +578,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">LP CDTL Cloud - base de connaissance 2021/2022</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../harmonisation_prog/intro_python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -539,8 +614,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
