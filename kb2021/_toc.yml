@@ -6,7 +6,7 @@ root: intro
 parts:
   # harmonisation_bd
   #- caption: Harmonisation BD
-  #  chapters: 
+  #  chapters:
   #  - file: harmonisation_bd/random_md
   # devops
   - caption: devops
@@ -14,35 +14,35 @@ parts:
     - file: devops/docker
   # harmonisation_prog
   - caption: Harmonisation Prog
-    chapters: 
+    chapters:
     - file: harmonisation_prog/intro_python
       sections:
       - file: harmonisation_prog/python/TP1
       - file: harmonisation_prog/python/TP2
-    - file: harmonisation_prog/intro_js
+      - file: harmonisation_prog/intro_js
       sections:
       - file: harmonisation_prog/js/TP1
       - file: harmonisation_prog/js/TP2
   # gpi
   - caption: Gestion de projet
     chapters:
-      - file: gpi/gpi_toolbox
-        sections:
-          - file: gpi/fiches/sujet1
-          - file: gpi/fiches/product_owner
-          - file: gpi/fiches/backlog_produit
+    - file: gpi/gpi_toolbox
+      sections:
+      - file: gpi/fiches/sujet1
+      - file: gpi/fiches/product_owner
+      - file: gpi/fiches/backlog_produit
   # harmonisation_prog
   - caption: Veille
-    chapters: 
+    chapters:
     - file: veille/intro_cfp
     - file: veille/limentic_vuejs
   # UX
   - caption: UX
-    chapters: 
+    chapters:
     - file: ux/ux_toolbox
       sections:
       - file: ux/fiches/analyse
-        sections: 
+        sections:
         - file: ux/fiches/analyse/acheter_une_fonctionnalite
         - file: ux/fiches/analyse/entretien_individuel
         - file: ux/fiches/analyse/focus_group
@@ -52,7 +52,7 @@ parts:
         - file: ux/fiches/analyse/warm_up
 
       - file: ux/fiches/conception
-        sections: 
+        sections:
         - file: ux/fiches/conception/brainstorming
         - file: ux/fiches/conception/crash_test
         - file: ux/fiches/conception/crazy_eight
@@ -62,17 +62,26 @@ parts:
         - file: ux/fiches/conception/tri_de_cartes
         - file: ux/fiches/conception/user_journey
         - file: ux/fiches/conception/wireframes
-      
+
       - file: ux/fiches/evaluation
-        sections: 
+        sections:
         - file: ux/fiches/evaluation/A-B_testing
         - file: ux/fiches/evaluation/eye_tracking
         - file: ux/fiches/evaluation/guerilla_testing
         - file: ux/fiches/evaluation/questionnaire_sus
         - file: ux/fiches/evaluation/test_utilisateurs_sur_scenarios
         - file: ux/fiches/evaluation/thinking_aloud
-      
+
       - file: ux/fiches/metiers
         sections:
         - file: ux/fiches/metiers/ux_evangelist
         - file: ux/fiches/metiers/ux_researcher
+# Architecture cloud
+  - caption: Architecture cloud
+    chapters:
+    - file: architecture/intro
+      sections:
+      - file: architecture/fiche/container
+      - file: architecture/fiche/namespace
+      - file: architecture/fiche/TD1_les_groupes_de_controle
+      - file: architecture/fiche/TP2_containers_LXC

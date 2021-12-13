@@ -1,0 +1,127 @@
+# TD1: Les groupes de contrôle (cgroups)
+
+Un groupe de contrôle est une fonctionnalité du noyau Linux qui permet la **gestion hiérarchique et l'allocation des ressources système**. Par exemple, il est possible de limiter l’usage de la RAM, du processeur ou de l’espace disque d’un processus.
+
+D'un point de vue Unix, après la phase de boot un premier processus est créé */bin/init*. Il sert à démarrer les processus nécessaires au fonctionnement du système (daemons, gettys) qui pourront à leur tour créer des processus. Il y a donc ici une question de arborescence où le processus */bin/init* est au sommet, si on le supprime tout le processus fils (c’est-à-dire tous ceux créés par ce dernier) sont détruits.
+
+La force des cgroups est qu'ils peuvent **faire cohabiter plusieurs arborescences de processus sans qu'elles soit interconnectées**. Avec les cgroups toutes le arborescence sont rattaché par un ou plusieurs sous-système.
+
+On entend par sous-système, une ressource unique comme un temps processeur ou un accès mémoire.
+
+Pour afficher la liste des sous-systèmes tapez la commande:
+
+```bash
+ls -l /sys/fs/cgroup
+```
+
+  ![list cgroup](assets/list_cgroup.png)
+
+Voici quelques description des cgroups :
+
+- **blkio (Block IO Controller)**: Permet de gérer les accès aux périphériques de type block comme les disques durs.
+
+- **cpu**:  Utilise le scheduler pour fournir aux processus des cgroups
+
+- **cpuacct (CPU Accounting Controller)**: Permet de générer automatiquement des rapports sur les ressources CPU utilisées par les processus d’un cgroup.
+
+- **cpuset**:  Permet d’assigner un ou plusieurs CPU physiques aux processus d’un cgroup
+
+## Création d'un cgroup " test "
+
+:::{warning}
+Les commandes devront être exécutées depuis l'utilisateur root. La commande “sudo” ne sera pas suffisante. Utilisez une machine virtuelle Linux si ce n’est pas votre cas.
+:::
+
+### 1. Création d'un répertoire test dans /sys/fs/cgroup/memory
+```bash
+mkdir /sys/fs/cgroup/memory/test
+```
+Et voilà, notre premier cgroup est créé !
+
+Par défaut le cgroup créé dans le sous-système memory hérite de la totalité de l'espace mémoire disponible.
+
+Il suffit de créer un fichier `memory.limit_in_bytes` contenant la valeur souhaitée en **octets** :
+
+```bash
+echo 30000000 > /sys/fs/cgroup/memory/test/memory.limit_in_bytes
+```
+Nous allons créer un script `test.sh` :
+
+```bash
+#!/bin/bash
+while true
+do
+    echo "Salut tout le monde"
+    sleep 60
+done
+```
+
+Pour lancer notre script :
+```bash
+sh ./test.sh &
+```
+
+Ce script print "Salut tout le monde" dans le terminal toute les 60 seconds
+
+  ![script](assets/script.png)
+
+Récupérez le PID du processus de votre script précédemment lancé.
+
+```bash
+ ps -ax | grep test.sh
+ ```
+ ![PID](assets/PID.png)
+
+Dans notre cas le PID ( **P**rocess **id**entifier ) est **14473**.
+
+Maintenant que nous connaissons le PID de notre script, voyons de quoi il a hérité en terme d’accès système.
+
+```bash
+ps -ww -o cgroup 14473
+```
+**Résultat :**
+
+
+9:blkio:/user.slice,7:pids:/user.slice/user-1001.slice/user@1001.service,6:cpu,cpuacct:/user.slice,**5:memory:/user.slice/user-1001.slice/user@1001.service**,2:devices:/user.slice,1:name=systemd:/user.slice/user-1001.slice/user@1001.service/apps.slice/apps-org.gnome.Terminal.slice/vte-spawn-1e54c1e5-8730-46f4-b395-4dbc409c37a4.scope,0::/user.slice/user-1001.slice/user@1001.service/apps.slice/apps-org.gnome.Terminal.slice/vte-spawn-1e54c1e5-8730-46f4-b395-4dbc409c37a4.scope
+
+
+On observe que notre processus est rattaché au sous-système **memory**
+
+
+Pour profiter de la limitation des 30Mo de notre cgroup test nous devons déplacer le processus 6476 vers le cgroup test :
+
+```bash
+echo 14473 > /sys/fs/cgroup/memory/test/cgroup.procs
+ps -ww -o cgroup 14473
+```
+
+**Résultat :**
+
+9:blkio:/user.slice,7:pids:/user.slice/user-1001.slice/user@1001.service,6:cpu,cpuacct:/user.slice,5:**memory:/test**,2:devices:/user.slice,1:name=systemd:/user.slice/user-1001.slice/user@1001.service/apps.slice/apps-org.gnome.Terminal.slice/vte-spawn-1e54c1e5-8730-46f4-b395-4dbc409c37a4.scope,0::/user.slice/user-1001.slice/user@1001.service/apps.slice/apps-org.gnome.Terminal.slice/vte-spawn-1e54c1e5-8730-46f4-b395-4dbc409c37a4.scope
+
+
+On constate cette fois-ci que le processus du script `test.sh` est lié au cgroup test du sous-système "memory". Le reste est inchangé.
+
+Maintenant qu’il fait partie du cgroup test, nous pouvons également le monitorer :
+
+```bash
+cat /sys/fs/cgroup/memory/test/memory.usage_in_bytes
+```
+**Sortie :** 688128
+
+L’occupation de la mémoire est d’environ 700ko.
+
+Maintenant on va détruire le processus `test.sh`
+
+```bash
+kill 14473
+```
+
+Nous allons créer un second cgroup avec un espace mémoire plus petit (5 ko) :
+
+```bash
+mkdir /sys/fs/cgroup/memory/test2
+
+sudo nano 5000 > /sys/fs/cgroup/memory/test2/memory.limit_in_bytes
+```
+On exécute le script et on récupère le PID. Nous déplaçons le processus `test.sh` vers le cgroup `test2`. Après quelques secondes le processus crash car il utilise trop de mémoire.
