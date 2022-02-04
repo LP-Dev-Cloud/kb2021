@@ -1,4 +1,4 @@
-# Quickie - VueJS
+# VueJS
 
 ## Résumé
 [VueJS](https://vuejs.org/v2/guide/) est un framework Javascript, léger, frontend pour créer des interfaces utilisateurs. 

@@ -1,4 +1,4 @@
-# Quickie - Angular 
+# Angular 
 
 [Angular](https://angular.io/guide/what-is-angular) c'est un framework utilisant le TypeScript, frontend, permettant la création d'application évolutive.    
 
