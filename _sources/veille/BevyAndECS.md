@@ -1,4 +1,4 @@
-# Rocket
+# Bevy and ECS
 
 ## Présentateur
 Demart Erwab, LP dev Cloud - [@edemart](https://github.com/edemart)
